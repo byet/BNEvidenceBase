@@ -1,0 +1,1312 @@
+<?xml version="1.0"?>
+
+<!--
+ * Copyright (C) 2015 Barbaros Yet & William Marsh.
+ *
+ * This file is a part of BNEvidenceBase library.
+ * 
+ * BNEvidenceBase library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301  USA
+-->
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://CoBN_1.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://CoBN_1.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#BNElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConflictingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContNodes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiscNodes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Edge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Evidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedBNElem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedChild"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedParent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedRelation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Expert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fragment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeasurementIdiom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Node"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NodesWithChild"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NodesWithParent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Publication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupportingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#comesFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conflicts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#excludedChildOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#excludedParentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#excludedRelationBetween"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasChild"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConflictingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDistribution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEdge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExcludedRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isASourceOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pointsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supports"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#within"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#datasetInfo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#evidenceDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#expertCredentials"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasModellingChoice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lowerBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#methodology"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nodeName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationISBN"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationPMID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationReference"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#stateName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#summary"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#upperBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#variableDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#APTTR"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ATC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Abdomen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Age"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BBP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chest"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Death"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Energy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FAST"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GCS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HR"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Head"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hypoperfusion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#INR"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InjuredParts"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lactate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mechanism"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PH"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PTR"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pelvis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PreHosp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ROTEMA30"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ROTEMA5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SBP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TissueInjury"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UP"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#ContNodes"/>
+        <ObjectIntersectionOf>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#lowerBound"/>
+                <Datatype abbreviatedIRI="xsd:double"/>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#upperBound"/>
+                <Datatype abbreviatedIRI="xsd:double"/>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DiscNodes"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#stateName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NodesWithChild"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasChild"/>
+            <Class IRI="#Node"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NodesWithParent"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasParent"/>
+            <Class IRI="#Node"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#ConflictingEvidence"/>
+        <Class IRI="#Evidence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContNodes"/>
+        <Class IRI="#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Data"/>
+        <Class IRI="#Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiscNodes"/>
+        <Class IRI="#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Distribution"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Edge"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedBNElem"/>
+        <Class IRI="#Evidence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedChild"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedParent"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedRelation"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Expert"/>
+        <Class IRI="#Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fragment"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeasurementIdiom"/>
+        <Class IRI="#Fragment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NodesWithChild"/>
+        <Class IRI="#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NodesWithParent"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Publication"/>
+        <Class IRI="#Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Source"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SupportingEvidence"/>
+        <Class IRI="#Evidence"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#APTTR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#ATC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Abdomen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Age"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#BBP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#BE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Chest"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Death"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Energy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#FAST"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#GCS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#HR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#HT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Hypoperfusion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#INR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#InjuredParts"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#LB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Lactate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Mechanism"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#PH"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#PTR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Pelvis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#PreHosp"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#ROTEMA30"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#ROTEMA5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#SBP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#TissueInjury"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#UP"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#APTTR"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#APTTR"/>
+        <Literal datatypeIRI="&xsd;double">16.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#APTTR"/>
+        <Literal datatypeIRI="&xsd;string">Activated partial thromboplastin time ratio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#ATC"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#ATC"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#ATC"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Acute Traumatic Coagulopathy (ATC) is an endogenous impairment of clotting ability that occurs after a combination of tissue hypooperfusion and tissue injury.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Abdomen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Abdomen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Abdomen"/>
+        <Literal datatypeIRI="&xsd;string">Severe abdominal injury (Defined by AIS &gt;= 3). This variable may not be observed while generating predictions with the ATC BN since ISS and AIS may not be known in early stage of treatment. In this case, the ATC BN can estiamte the state of this variable from other observed values.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Age"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Age&lt;45</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Age"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">65&lt;=Age</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Age"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">45&lt;=Age&lt;65</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Age"/>
+        <Literal datatypeIRI="&xsd;string">Patient&apos;s age.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#BBP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">I</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#BBP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#BBP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">IIII</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#BBP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">IV</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#BBP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">II</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#BBP"/>
+        <Literal datatypeIRI="&xsd;string">Number of bleeding main body parts (bleeding in chest, abdomen, pelvis and extremities).</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#BE"/>
+        <Literal datatypeIRI="&xsd;double">-50.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#BE"/>
+        <Literal datatypeIRI="&xsd;double">50.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#BE"/>
+        <Literal datatypeIRI="&xsd;string">Base excess / deficit (BE) in blood measured in first 10 minutes after admission to hospital using an arterial blood gas (ABG) test. BE variable is used as a marker for determining the Hypoperfusion state.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Chest"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Chest"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Chest"/>
+        <Literal datatypeIRI="&xsd;string">Severe chest injury (Defined by AIS &gt;= 3). This variable may not be observed while generating predictions with the ATC BN since ISS and AIS may not be known in early stage of treatment. In this case, the ATC BN can estiamte the state of this variable from other observed values.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Death"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Death"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Death"/>
+        <Literal datatypeIRI="&xsd;string">Risk of death in 48 hours</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Energy"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Low</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Energy"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">High</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Energy"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Energy transferred from the injury. Classification of the energy and mechanism of injury is described in &quot;Injury Classification&quot; link below.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#FAST"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Negative</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#FAST"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Positive</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#FAST"/>
+        <Literal datatypeIRI="&xsd;string">Focussed assessment sonography for trauma (FAST) scan result.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#GCS"/>
+        <Literal datatypeIRI="&xsd;double">3.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#GCS"/>
+        <Literal datatypeIRI="&xsd;double">15.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#GCS"/>
+        <Literal datatypeIRI="&xsd;string">Glasgow coma score.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#HR"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#HR"/>
+        <Literal datatypeIRI="&xsd;double">200.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#HR"/>
+        <Literal datatypeIRI="&xsd;string">Patient&apos;s heart rate measured in first 10 minutes after admission to hospital.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#HT"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#HT"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#HT"/>
+        <Literal datatypeIRI="&xsd;string">Haemothorax</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Head"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Head"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Head"/>
+        <Literal datatypeIRI="&xsd;string">Severe head injury (Defined by AIS &gt;= 3). This variable may not be observed while generating predictions with the ATC BN since ISS and AIS may not be known in early stage of treatment. In this case, the ATC BN can estiamte the state of this variable from other observed values.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Hypoperfusion"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Compensated</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Hypoperfusion"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Uncompensated</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Hypoperfusion"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">None</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Hypoperfusion"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The degree of inadequate oxygen delivery and perfusion to the tissues</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#INR"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#INR"/>
+        <Literal datatypeIRI="&xsd;double">16.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#INR"/>
+        <Literal datatypeIRI="&xsd;string">International normalised ratio.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#InjuredParts"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">II</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#InjuredParts"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">I</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#InjuredParts"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">III</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#InjuredParts"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#InjuredParts"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">IV</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#InjuredParts"/>
+        <Literal datatypeIRI="&xsd;string">Number of severely injured major body regions.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#LB"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#LB"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#LB"/>
+        <Literal datatypeIRI="&xsd;string">Long bone fracture.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#Lactate"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#Lactate"/>
+        <Literal datatypeIRI="&xsd;double">30.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Lactate"/>
+        <Literal datatypeIRI="&xsd;string">Amount of lactate in blood measured in first 10 minutes after admission to hospital. Lactate is measured in mmol/litre units by arterial blood gas (ABG) test. Lactate is a by-prouct of anaerobic cell metabolism. Lactate variable is used as a marker for determining the Hypoperfusion state.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Mechanism"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Penetrating</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Mechanism"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Blunt</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Mechanism"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Mechanism of the injury which can be categorised as blunt, penetrating and blast. Blast injuries are not included in this version of the model since the model is developed from civilian data where blast injuries are rare. Classification of the mechanism and energy of injuries is described in the &quot;Injury Classification&quot; link below.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#PH"/>
+        <Literal datatypeIRI="&xsd;string">pH value of blood measured in first 10 minutes after admission to hospital using an arterial blood gas (ABG) test. The pH variable is used as a marker for determining the Hypoperfusion state.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#PH"/>
+        <Literal datatypeIRI="&xsd;double">6.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#PH"/>
+        <Literal datatypeIRI="&xsd;double">8.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#PTR"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#PTR"/>
+        <Literal datatypeIRI="&xsd;double">16.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#PTR"/>
+        <Literal datatypeIRI="&xsd;string">Prothrombin ratio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Pelvis"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Pelvis"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Pelvis"/>
+        <Literal datatypeIRI="&xsd;string">Severe pelvic and / or lower extremity injury (Defined by AIS &gt;= 3). This variable may not be observed while generating predictions with the ATC BN since ISS and AIS may not be known in early stage of treatment. In this case, the ATC BN can estiamte the state of this variable from other observed values.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#PreHosp"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">x&lt;500ml</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#PreHosp"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">500ml&lt;=x&lt;2000ml</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#PreHosp"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">2000ml&lt;=x</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#PreHosp"/>
+        <Literal datatypeIRI="&xsd;string">Amount of intravenous liquids transfused before admission to hospital.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#ROTEMA30"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#ROTEMA30"/>
+        <Literal datatypeIRI="&xsd;double">100.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#ROTEMA30"/>
+        <Literal datatypeIRI="&xsd;string">Amplitude of ROTEM EXTEM at 30th minute</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#ROTEMA5"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#ROTEMA5"/>
+        <Literal datatypeIRI="&xsd;double">100.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#ROTEMA5"/>
+        <Literal datatypeIRI="&xsd;string">Amplitude of ROTEM EXTEM at 5th minute</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#lowerBound"/>
+        <NamedIndividual IRI="#SBP"/>
+        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#upperBound"/>
+        <NamedIndividual IRI="#SBP"/>
+        <Literal datatypeIRI="&xsd;double">200.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#SBP"/>
+        <Literal datatypeIRI="&xsd;string">Patient&apos;s systolic blood pressure measured in first 10 minutes after admission to hospital.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#TissueInjury"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Moderate  ( 30 &gt; ISS &gt;= 15 )</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#TissueInjury"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Severe (45 &gt; ISS &gt;= 30)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#TissueInjury"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Profound (ISS &gt;= 45)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#TissueInjury"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Mild ( ISS &lt; 15 )</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#TissueInjury"/>
+        <Literal datatypeIRI="&xsd;string">Severity of overall tissue injury defined by the injury severity score (ISS). This variable may not be observed while generating predictions with the ATC BN since ISS and AIS may not be known in early stage of treatment. In this case, the ATC BN can estiamte the state of this variable from other observed values.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#UP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">No</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#UP"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#UP"/>
+        <Literal datatypeIRI="&xsd;string">Unstable pelvis.</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#comesFrom"/>
+        <ObjectProperty IRI="#connectedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#conflicts"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#excludedChildOf"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#excludedParentOf"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#excludedRelationBetween"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasChild"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConflictingEvidence"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExcludedRelation"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <ObjectProperty IRI="#hasEdge"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <ObjectProperty IRI="#hasEdge"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasParent"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#pointsTo"/>
+        <ObjectProperty IRI="#connectedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#supports"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <ObjectProperty IRI="#comesFrom"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasConflictingEvidence"/>
+        <ObjectProperty IRI="#conflicts"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#contains"/>
+        <ObjectProperty IRI="#within"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#excludedChildOf"/>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#excludedParentOf"/>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasExcludedRelation"/>
+        <ObjectProperty IRI="#excludedRelationBetween"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasParent"/>
+        <ObjectProperty IRI="#hasChild"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#pointsTo"/>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSource"/>
+        <ObjectProperty IRI="#isASourceOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <ObjectProperty IRI="#supports"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#comesFrom"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDistribution"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#pointsTo"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+    </InverseFunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#contains"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#within"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#comesFrom"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Fragment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasChild"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDistribution"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEdge"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEvidence"/>
+        <Class IRI="#BNElement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParent"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSource"/>
+        <Class IRI="#Evidence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pointsTo"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#comesFrom"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contains"/>
+        <ObjectUnionOf>
+            <Class IRI="#Fragment"/>
+            <Class IRI="#Node"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasChild"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDistribution"/>
+        <Class IRI="#Distribution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEdge"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEvidence"/>
+        <Class IRI="#Evidence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParent"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSource"/>
+        <Class IRI="#Source"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pointsTo"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#contains"/>
+            <ObjectProperty IRI="#hasExcludedParent"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasIncommingEdge"/>
+            <ObjectProperty IRI="#comesFrom"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasParent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasOutgoingEdge"/>
+            <ObjectProperty IRI="#pointsTo"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasChild"/>
+    </SubObjectPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasModellingChoice"/>
+        <Class IRI="#Fragment"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasModellingChoice"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#summary"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Distribution</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">For simplicity I defined an individiaul for each of the distributions. Later, each distribution can be defined as classes and individuals of these classes can be the distributions of each node. 
+
+In this latter case, the source of parameter for each parameter can be defined as well.
+
+The parameters are not important at this stage since extracting number from large NPTs in Agenarisk can be difficult.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contains</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This object property  defines the members of an BN fragment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#methodology</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Information about the methodology for developing the BN</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#parameterisedFrom</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This can be defined for either each node or each arc. If distributions are defined seperately for each node, this can be defined for each distribution.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

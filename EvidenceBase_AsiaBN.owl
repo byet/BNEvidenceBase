@@ -1,0 +1,1648 @@
+<?xml version="1.0"?>
+<!--
+ * Copyright (C) 2015 Barbaros Yet & William Marsh.
+ *
+ * This file is a part of BNEvidenceBase library.
+ * 
+ * BNEvidenceBase library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301  USA
+-->
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://CoBN_1.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://CoBN_1.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#BNElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConflictingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContNodes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiscNodes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Edge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Evidence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedBNElem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedChild"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedParent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExcludedRelation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Expert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fragment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeasurementIdiom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Node"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NodesWithChild"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NodesWithParent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Publication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SupportingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#comesFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#conflicts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#excludedChildOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#excludedParentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#excludedRelationBetween"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasChild"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConflictingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDistribution"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEdge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExcludedRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isASourceOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pointsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supports"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#within"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#datasetInfo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#evidenceDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#expertCredentials"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasModellingChoice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lowerBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#methodology"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nodeName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationISBN"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationPMID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationReference"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationURL"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#stateName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#summary"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#upperBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#variableDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Asbestos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AsiaBN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AsiaToTuberculosisEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BackgroundInfo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bomanji2015"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bronchitis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BronchitisDyspneaEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BronchitisToDyspnea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CancerDyspneaEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CancerToDyspnea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CancerToXRay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CancerXRayEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Carbone1992"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ConlXrayCancer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cough"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Diagnosis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dyspnea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GoHagan2005"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Holm2015"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hueston1998"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Latimer2015"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LungCancer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Markowitz2015"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Newcomb1992"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rikimaru2004"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Smoking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmokingBronchitisEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmokingCancerEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmokingToBronchitis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmokingToCancer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sone2000"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Symptoms"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Troisi1995"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tuberculosis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TuberculosisDyspneaEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TuberculosisToDyspnea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TuberculosisToXRay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TuberculosisXRayEvidence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VisitToAsia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VisitToTuberculosis"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WHO2010"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#XRayResult"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#ContNodes"/>
+        <ObjectIntersectionOf>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#lowerBound"/>
+                <Datatype abbreviatedIRI="xsd:double"/>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#upperBound"/>
+                <Datatype abbreviatedIRI="xsd:double"/>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DiscNodes"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#stateName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NodesWithChild"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasChild"/>
+            <Class IRI="#Node"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NodesWithParent"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasParent"/>
+            <Class IRI="#Node"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#ConflictingEvidence"/>
+        <Class IRI="#Evidence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContNodes"/>
+        <Class IRI="#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Data"/>
+        <Class IRI="#Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiscNodes"/>
+        <Class IRI="#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Distribution"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Edge"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedBNElem"/>
+        <Class IRI="#Evidence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedChild"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedParent"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExcludedRelation"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Expert"/>
+        <Class IRI="#Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fragment"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeasurementIdiom"/>
+        <Class IRI="#Fragment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <Class IRI="#BNElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NodesWithChild"/>
+        <Class IRI="#Node"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NodesWithParent"/>
+        <Class IRI="#ExcludedBNElem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Publication"/>
+        <Class IRI="#Source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Source"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SupportingEvidence"/>
+        <Class IRI="#Evidence"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#ExcludedParent"/>
+        <NamedIndividual IRI="#Asbestos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fragment"/>
+        <NamedIndividual IRI="#AsiaBN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#AsiaToTuberculosisEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fragment"/>
+        <NamedIndividual IRI="#BackgroundInfo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Bomanji2015"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#BronchitisDyspneaEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#BronchitisToDyspnea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#CancerDyspneaEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#CancerToDyspnea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#CancerToXRay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#CancerXRayEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Carbone1992"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ConflictingEvidence"/>
+        <NamedIndividual IRI="#ConlXrayCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ExcludedChild"/>
+        <NamedIndividual IRI="#Cough"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fragment"/>
+        <NamedIndividual IRI="#Diagnosis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#GoHagan2005"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Holm2015"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Hueston1998"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Latimer2015"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Markowitz2015"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Newcomb1992"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Rikimaru2004"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Smoking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#SmokingBronchitisEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#SmokingCancerEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#SmokingToBronchitis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#SmokingToCancer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Sone2000"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fragment"/>
+        <NamedIndividual IRI="#Symptoms"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#Troisi1995"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#TuberculosisDyspneaEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#TuberculosisToDyspnea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#TuberculosisToXRay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SupportingEvidence"/>
+        <NamedIndividual IRI="#TuberculosisXRayEvidence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Edge"/>
+        <NamedIndividual IRI="#VisitToTuberculosis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Publication"/>
+        <NamedIndividual IRI="#WHO2010"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Node"/>
+        <NamedIndividual IRI="#XRayResult"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#Asbestos"/>
+        <NamedIndividual IRI="#Markowitz2015"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#AsiaBN"/>
+        <NamedIndividual IRI="#BackgroundInfo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#AsiaBN"/>
+        <NamedIndividual IRI="#Symptoms"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#AsiaBN"/>
+        <NamedIndividual IRI="#Diagnosis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#AsiaToTuberculosisEvidence"/>
+        <NamedIndividual IRI="#WHO2010"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#BackgroundInfo"/>
+        <NamedIndividual IRI="#Smoking"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#BackgroundInfo"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+        <NamedIndividual IRI="#Cough"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+        <NamedIndividual IRI="#SmokingToBronchitis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+        <NamedIndividual IRI="#BronchitisToDyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#BronchitisDyspneaEvidence"/>
+        <NamedIndividual IRI="#Hueston1998"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#BronchitisToDyspnea"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#BronchitisToDyspnea"/>
+        <NamedIndividual IRI="#BronchitisDyspneaEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#BronchitisToDyspnea"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#CancerDyspneaEvidence"/>
+        <NamedIndividual IRI="#Latimer2015"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#CancerToDyspnea"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#CancerToDyspnea"/>
+        <NamedIndividual IRI="#CancerDyspneaEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#CancerToDyspnea"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#CancerToXRay"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConflictingEvidence"/>
+        <NamedIndividual IRI="#CancerToXRay"/>
+        <NamedIndividual IRI="#ConlXrayCancer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#CancerToXRay"/>
+        <NamedIndividual IRI="#CancerXRayEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#CancerToXRay"/>
+        <NamedIndividual IRI="#XRayResult"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#CancerXRayEvidence"/>
+        <NamedIndividual IRI="#Latimer2015"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#CancerXRayEvidence"/>
+        <NamedIndividual IRI="#GoHagan2005"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#ConlXrayCancer"/>
+        <NamedIndividual IRI="#Sone2000"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#Cough"/>
+        <NamedIndividual IRI="#Rikimaru2004"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#Cough"/>
+        <NamedIndividual IRI="#Latimer2015"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#Cough"/>
+        <NamedIndividual IRI="#Hueston1998"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Diagnosis"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Diagnosis"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Diagnosis"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+        <NamedIndividual IRI="#CancerToDyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+        <NamedIndividual IRI="#BronchitisToDyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <NamedIndividual IRI="#Cough"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <NamedIndividual IRI="#Asbestos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <NamedIndividual IRI="#SmokingToCancer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <NamedIndividual IRI="#CancerToXRay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <NamedIndividual IRI="#CancerToDyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <NamedIndividual IRI="#Carbone1992"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#Smoking"/>
+        <NamedIndividual IRI="#SmokingToCancer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#Smoking"/>
+        <NamedIndividual IRI="#SmokingToBronchitis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#SmokingBronchitisEvidence"/>
+        <NamedIndividual IRI="#Troisi1995"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#SmokingBronchitisEvidence"/>
+        <NamedIndividual IRI="#Holm2015"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#SmokingCancerEvidence"/>
+        <NamedIndividual IRI="#Newcomb1992"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#SmokingCancerEvidence"/>
+        <NamedIndividual IRI="#Carbone1992"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#SmokingToBronchitis"/>
+        <NamedIndividual IRI="#Smoking"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#SmokingToBronchitis"/>
+        <NamedIndividual IRI="#SmokingBronchitisEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#SmokingToBronchitis"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#SmokingToCancer"/>
+        <NamedIndividual IRI="#Smoking"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#SmokingToCancer"/>
+        <NamedIndividual IRI="#SmokingCancerEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#SmokingToCancer"/>
+        <NamedIndividual IRI="#LungCancer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Symptoms"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#contains"/>
+        <NamedIndividual IRI="#Symptoms"/>
+        <NamedIndividual IRI="#XRayResult"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <NamedIndividual IRI="#Cough"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <NamedIndividual IRI="#VisitToTuberculosis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <NamedIndividual IRI="#TuberculosisToDyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <NamedIndividual IRI="#TuberculosisToXRay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#TuberculosisDyspneaEvidence"/>
+        <NamedIndividual IRI="#Rikimaru2004"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#TuberculosisToDyspnea"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#TuberculosisToDyspnea"/>
+        <NamedIndividual IRI="#TuberculosisDyspneaEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#TuberculosisToDyspnea"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#TuberculosisToXRay"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#TuberculosisToXRay"/>
+        <NamedIndividual IRI="#TuberculosisXRayEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#TuberculosisToXRay"/>
+        <NamedIndividual IRI="#XRayResult"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSource"/>
+        <NamedIndividual IRI="#TuberculosisXRayEvidence"/>
+        <NamedIndividual IRI="#Bomanji2015"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+        <NamedIndividual IRI="#VisitToTuberculosis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#comesFrom"/>
+        <NamedIndividual IRI="#VisitToTuberculosis"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <NamedIndividual IRI="#VisitToTuberculosis"/>
+        <NamedIndividual IRI="#AsiaToTuberculosisEvidence"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pointsTo"/>
+        <NamedIndividual IRI="#VisitToTuberculosis"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <NamedIndividual IRI="#XRayResult"/>
+        <NamedIndividual IRI="#TuberculosisToXRay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <NamedIndividual IRI="#XRayResult"/>
+        <NamedIndividual IRI="#CancerToXRay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#parameterisedFrom"/>
+        <NamedIndividual IRI="#XRayResult"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#Asbestos"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Asbestos is a main cause of lung cancer.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#summary"/>
+        <NamedIndividual IRI="#AsiaBN"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The primary aim of the Asia BN is to make differential diagnosis of lung cancer, tuberculosis and bronchitis by taking several symptoms and background factors into account.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#AsiaToTuberculosisEvidence"/>
+        <Literal datatypeIRI="&xsd;string">One-third of the world’s burden of tuberculosis (TB), or about 4.9 million prevalent cases, is found in the World Health Organization (WHO) South-East Asia Region.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#summary"/>
+        <NamedIndividual IRI="#BackgroundInfo"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The model contains uses two background factors to assist diagnosis: smoking and visit to asia. Smoking can increase the risk of bronchitis and lung cancer, and a recent visit to Asia can increase the risk of tuberculosis.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Bomanji2015"/>
+        <Literal datatypeIRI="&xsd;integer">25605754</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Bomanji2015"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Cold Spring Harb Perspect Med. 2015 Jan 20;5(6). pii: a017814. doi: 10.1101/cshperspect.a017814.
+Imaging in Tuberculosis.
+Bomanji JB1, Gupta N2, Gulati P3, Das CJ4.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+        <Literal datatypeIRI="&xsd;string">Absent</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+        <Literal datatypeIRI="&xsd;string">Present</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Bronchitis"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Bronchitis diagnosis</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#BronchitisDyspneaEvidence"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">True acute purulent bronchitis is characterized by infection of the bronchial tree with resultant bronchial edema and mucus formation.6 Because of these changes, patients develop a productive cough and signs of bronchial obstruction, such as wheezing or dyspnea on exertion.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#CancerDyspneaEvidence"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The most common symptoms of lung cancer are cough, dyspnea, hemoptysis, and systemic symptoms such as weight loss and anorexia.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#CancerXRayEvidence"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A chest X-ray is usually the first test that is used to diagnose lung cancer. Most lung tumours show up on X-rays as a white-grey mass.
+However, chest X-rays cannot give a definitive diagnosis because they often cannot distinguish between cancer and other conditions, such as a lung abscess (a collection of pus that forms in the lungs).
+If your chest X-ray suggests you may have lung cancer, you should be referred to a specialist (if you&apos;ve haven&apos;t already been) in chest conditions such as lung cancer. A specialist can carry out more tests to investigate whether you have lung cancer and, if you do, what type it is and how much it has spread.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Carbone1992"/>
+        <Literal datatypeIRI="&xsd;integer">1496998</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Carbone1992"/>
+        <Literal datatypeIRI="&xsd;string">Smoking and cancer. Carbone D. Am J Med. 1992 Jul 15;93(1A):13S-17S.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#ConlXrayCancer"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Conventional chest radiography (CXR) is a poor diagnostic tool for detecting lung cancers at a surgically curable stage.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#Cough"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Cough is a common symptom of lung cancer, bronchitis and tuberculosis.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#summary"/>
+        <NamedIndividual IRI="#Diagnosis"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The model aims to make differential diagnosis of bronichits, lung cancer and tuberculosis.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+        <Literal datatypeIRI="&xsd;string">Present</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+        <Literal datatypeIRI="&xsd;string">Absent</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Dyspnea"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Does the patient have dyspnea (shortness of breath)?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#GoHagan2005"/>
+        <Literal datatypeIRI="&xsd;integer">15603850</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#GoHagan2005"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Lung Cancer. 2005 Jan;47(1):9-15.
+Final results of the Lung Screening Study, a randomized feasibility study of spiral CT versus chest X-ray screening for lung cancer.
+Gohagan JK1, Marcus PM, Fagerstrom RM, Pinsky PF, Kramer BS, Prorok PC, Ascher S, Bailey W, Brewer B, Church T, Engelhard D, Ford M, Fouad M, Freedman M, Gelmann E, Gierada D, Hocking W, Inampudi S, Irons B, Johnson CC, Jones A, Kucera G, Kvale P, Lappe K, Manor W, Moore A, Nath H, Neff S, Oken M, Plunkett M, Price H, Reding D, Riley T, Schwartz M, Spizarny D, Yoffie R, Zylak C; LUNG SCREENING STUDY RESEARCH GROUP.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Holm2015"/>
+        <Literal datatypeIRI="&xsd;integer">24902568</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Holm2015"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Int J Tuberc Lung Dis. 2014 Jul;18(7):870-5. doi: 10.5588/ijtld.13.0652.
+Incidence of chronic bronchitis: a prospective study in a large general population.
+Holm M1, Torén K1, Andersson E1.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Hueston1998"/>
+        <Literal datatypeIRI="&xsd;integer">9531910</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Hueston1998"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Am Fam Physician. 1998 Mar 15;57(6):1270-6, 1281-2.
+Acute bronchitis.
+Hueston WJ1, Mainous AG 3rd.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Latimer2015"/>
+        <Literal datatypeIRI="&xsd;integer">25955626</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Latimer2015"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Am Fam Physician. 2015 Feb 15;91(4):250-6.
+Lung cancer: diagnosis, treatment principles, and screening.
+Latimer KM1, Mott TF1.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Lauritzen, Steffen L., and David J. Spiegelhalter. &quot;Local computations with probabilities on graphical structures and their application to expert systems.&quot; Journal of the Royal Statistical Society. Series B (Methodological) (1988): 157-224.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationURL"/>
+        <NamedIndividual IRI="#Lauritzen1988"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">http://www.jstor.org/stable/2345762</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <Literal datatypeIRI="&xsd;string">Absent</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <Literal datatypeIRI="&xsd;string">Present</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#LungCancer"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Lung cancer diagnosis.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Markowitz2015"/>
+        <Literal datatypeIRI="&xsd;integer">26024342</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Markowitz2015"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Asbestos-related lung cancer and malignant mesothelioma of the pleura: selected current issues.
+Markowitz S.
+Semin Respir Crit Care Med. 2015 Jun;36(3):334-46. doi: 10.1055/s-0035-1549449. Epub 2015 May 29.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Newcomb1992"/>
+        <Literal datatypeIRI="&xsd;integer">1548964</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Newcomb1992"/>
+        <Literal datatypeIRI="&xsd;string">The health consequences of smoking. Cancer. Newcomb PA, Carbone PP. Med Clin North Am. 1992 Mar;76(2):305-31. Review</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Newcomb1992"/>
+        <Literal datatypeIRI="&xsd;string"></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Rikimaru2004"/>
+        <Literal datatypeIRI="&xsd;integer">15482190</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Rikimaru2004"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Review Endobronchial tuberculosis
+April 2004, Vol. 2, No. 2 , Pages 245-251 (doi:10.1586/14787210.2.2.245)
+Toru Rikimaru</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Smoking"/>
+        <Literal datatypeIRI="&xsd;string">NonSmoker</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Smoking"/>
+        <Literal datatypeIRI="&xsd;string">Smoker</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Smoking"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Does the patient smoke?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#SmokingBronchitisEvidence"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The risk of chronic bronchitis is significantly higher in current smokers than in never smokers and increased with the number of cigarettes smoked per day.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#SmokingCancerEvidence"/>
+        <Literal datatypeIRI="&xsd;string">Smoking is the most important preventable cause of cancer in the world.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Sone2000"/>
+        <Literal datatypeIRI="&xsd;integer">10884725</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Sone2000"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Br J Radiol. 2000 Feb;73(866):137-45.
+Characteristics of small lung cancers invisible on conventional chest radiography and detected by population based screening using spiral CT.
+Sone S1, Li F, Yang ZG, Takashima S, Maruyama Y, Hasegawa M, Wang JC, Kawakami S, Honda T.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#summary"/>
+        <NamedIndividual IRI="#Symptoms"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The result of the x-ray result and the presence of dyspnea are used to assist differential diagnosis.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#Troisi1995"/>
+        <Literal datatypeIRI="&xsd;integer">7497760</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#Troisi1995"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Chest. 1995 Dec;108(6):1557-61.
+Cigarette smoking and incidence of chronic bronchitis and asthma in women.
+Troisi RJ1, Speizer FE, Rosner B, Trichopoulos D, Willett WC.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <Literal datatypeIRI="&xsd;string">Present</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <Literal datatypeIRI="&xsd;string">Absent</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#Tuberculosis"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Tuberculosis diagnosis.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#TuberculosisDyspneaEvidence"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Common symptoms of endobronchial tuberculosis are cough, hemoptysis, sputum production, wheezing, chest pain, fever and dyspnea.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#evidenceDescription"/>
+        <NamedIndividual IRI="#TuberculosisXRayEvidence"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Chest X rays remain the basic imaging modality for pulmonary tuberculosis.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+        <Literal datatypeIRI="&xsd;string">NoVisit</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+        <Literal datatypeIRI="&xsd;string">Visit</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#VisitToAsia"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Has the patient travelled to Asia in the last 30 days?</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationPMID"/>
+        <NamedIndividual IRI="#WHO2010"/>
+        <Literal datatypeIRI="&xsd;integer">20428378</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#publicationReference"/>
+        <NamedIndividual IRI="#WHO2010"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Bull World Health Organ. 2010 Mar;88(3):164. doi: 10.2471/BLT.09.073874.
+Tuberculosis in the WHO South-East Asia Region.
+Nair N, Wares F, Sahu S.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#XRayResult"/>
+        <Literal datatypeIRI="&xsd;string">Abnormal</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#stateName"/>
+        <NamedIndividual IRI="#XRayResult"/>
+        <Literal datatypeIRI="&xsd;string">Normal</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#variableDescription"/>
+        <NamedIndividual IRI="#XRayResult"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Result of the X-Ray scan.</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#comesFrom"/>
+        <ObjectProperty IRI="#connectedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#conflicts"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#excludedChildOf"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#excludedParentOf"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#excludedRelationBetween"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasChild"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConflictingEvidence"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExcludedRelation"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <ObjectProperty IRI="#hasEdge"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <ObjectProperty IRI="#hasEdge"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasParent"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#pointsTo"/>
+        <ObjectProperty IRI="#connectedTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#supports"/>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <ObjectProperty IRI="#comesFrom"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasConflictingEvidence"/>
+        <ObjectProperty IRI="#conflicts"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#contains"/>
+        <ObjectProperty IRI="#within"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#excludedChildOf"/>
+        <ObjectProperty IRI="#hasExcludedChild"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#excludedParentOf"/>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasExcludedRelation"/>
+        <ObjectProperty IRI="#excludedRelationBetween"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasParent"/>
+        <ObjectProperty IRI="#hasChild"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isEvidenceOf"/>
+        <ObjectProperty IRI="#hasEvidence"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#pointsTo"/>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSource"/>
+        <ObjectProperty IRI="#isASourceOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSupportingEvidence"/>
+        <ObjectProperty IRI="#supports"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#comesFrom"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDistribution"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#pointsTo"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+    </InverseFunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#contains"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#within"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#comesFrom"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Fragment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasChild"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDistribution"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEdge"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEvidence"/>
+        <Class IRI="#BNElement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParent"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSource"/>
+        <Class IRI="#Evidence"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pointsTo"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#comesFrom"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contains"/>
+        <ObjectUnionOf>
+            <Class IRI="#Fragment"/>
+            <Class IRI="#Node"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasChild"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDistribution"/>
+        <Class IRI="#Distribution"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEdge"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEvidence"/>
+        <Class IRI="#Evidence"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIncommingEdge"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOutgoingEdge"/>
+        <Class IRI="#Edge"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParent"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSource"/>
+        <Class IRI="#Source"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pointsTo"/>
+        <Class IRI="#Node"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#contains"/>
+            <ObjectProperty IRI="#hasExcludedParent"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasExcludedParent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasIncommingEdge"/>
+            <ObjectProperty IRI="#comesFrom"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasParent"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasOutgoingEdge"/>
+            <ObjectProperty IRI="#pointsTo"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasChild"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#publicationReference"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasModellingChoice"/>
+        <Class IRI="#Fragment"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasModellingChoice"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#summary"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Distribution</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">For simplicity I defined an individiaul for each of the distributions. Later, each distribution can be defined as classes and individuals of these classes can be the distributions of each node. 
+
+In this latter case, the source of parameter for each parameter can be defined as well.
+
+The parameters are not important at this stage since extracting number from large NPTs in Agenarisk can be difficult.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contains</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This object property  defines the members of an BN fragment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#methodology</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Information about the methodology for developing the BN</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#parameterisedFrom</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This can be defined for either each node or each arc. If distributions are defined seperately for each node, this can be defined for each distribution.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
