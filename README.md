@@ -4,9 +4,8 @@ BNEvidenceBase transforms an BN evidence base that is developed as an OWL ontolo
 For more details about BN Evidence Bases see: Yet B, Perkins ZB, Tai NR, and Marsh DWR (2014). "Explicit Evidence for Prognostic Bayesian Network Models" Studies in Health Technology and Informatics, 205, pp.53-57. http://dx.doi.org/10.3233/978-1-61499-432-9-53
 
 For examples of BN Evidence Bases generated with BNEvidenceBase see:
-  1. http://yunus.hacettepe.edu.tr/~barbaros.yet/AsiaEBase/
-  2. http://yunus.hacettepe.edu.tr/~barbaros.yet/ATCEBase/
-  3. http://www.traumamodels.com
+  1. http://www.traumamodels.com/Asia_EBase/
+  2. http://www.traumamodels.com/atcbn/ATC_EBase
  
   
 # Running BNEvidenceBase
